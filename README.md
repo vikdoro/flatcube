@@ -53,3 +53,13 @@ cube.isSolved() // true
 - `@tadacube/engine`: the model, notation, facelets and the headless cube (`createCube`). No Vue, no DOM.
 - `@tadacube/engine/board`: the board's geometry: layout, arrows, frame, gestures, motion. No Vue.
 - `@tadacube/engine/vue`: `createBoard`, the `CubeBoard` component and the keyboard. Needs Vue 3.5.
+
+## Development
+
+```bash
+npm install
+npm run check   # vue-tsc, then the tests
+```
+
+The package ships TypeScript source, not a build: a Vite app compiles it, `CubeBoard.vue` included, through
+`@vitejs/plugin-vue`. Releases are git tags (`v0.1.0`), which an app pins as `github:vikdoro/tadacube-engine#v0.1.0`.
