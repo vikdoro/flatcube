@@ -1,7 +1,13 @@
 {
-  "name": "@tadacube/engine",
+  "name": "flatcube",
   "private": true,
   "version": "0.1.0",
+  "description": "A 3×3 cube laid out flat as an open box, with notation, facelets and a Vue board",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikdoro/flatcube.git"
+  },
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
@@ -11,7 +17,8 @@
   "files": [
     "src",
     "!src/**/*.test.ts",
-    "cube-terminology.md"
+    "cube-terminology.md",
+    "LICENSE"
   ],
   "scripts": {
     "test": "vitest run",

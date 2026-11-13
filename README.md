@@ -1,13 +1,15 @@
-# @tadacube/engine
+# flatcube
+
+[![CI](https://github.com/vikdoro/flatcube/actions/workflows/ci.yml/badge.svg)](https://github.com/vikdoro/flatcube/actions/workflows/ci.yml)
 
 A 3×3 cube laid out flat as an open box (one face in the middle, the four sides fanned around it, the far face hanging
-open above like a lid), controllable from anything: notation, a keyboard, a drag, a solver. The name is a placeholder.
+open above like a lid), controllable from anything: notation, a keyboard, a drag, a solver.
 Terms for the board are in [cube-terminology.md](cube-terminology.md).
 
 ## Use
 
 ```ts
-import { createBoard, attachKeyboard, CubeBoard } from '@tadacube/engine/vue'
+import { createBoard, attachKeyboard, CubeBoard } from 'flatcube/vue'
 
 const board = createBoard()
 board.turn("R U R' U'")          // notation, a move or a list of moves; the board animates them in turn
@@ -36,7 +38,7 @@ Not supported: slices (`M E S`), wide moves (`r`, `Rw`) and rotations (`x y z`).
 cube needs nothing translated:
 
 ```ts
-import { createCube } from '@tadacube/engine'
+import { createCube } from 'flatcube'
 import Cube from 'cubejs'
 
 Cube.initSolver()
@@ -50,9 +52,9 @@ cube.isSolved() // true
 
 ## Entry points
 
-- `@tadacube/engine`: the model, notation, facelets and the headless cube (`createCube`). No Vue, no DOM.
-- `@tadacube/engine/board`: the board's geometry: layout, arrows, frame, gestures, motion. No Vue.
-- `@tadacube/engine/vue`: `createBoard`, the `CubeBoard` component and the keyboard. Needs Vue 3.5.
+- `flatcube`: the model, notation, facelets and the headless cube (`createCube`). No Vue, no DOM.
+- `flatcube/board`: the board's geometry: layout, arrows, frame, gestures, motion. No Vue.
+- `flatcube/vue`: `createBoard`, the `CubeBoard` component and the keyboard. Needs Vue 3.5.
 
 ## Development
 
@@ -62,4 +64,8 @@ npm run check   # vue-tsc, then the tests
 ```
 
 The package ships TypeScript source, not a build: a Vite app compiles it, `CubeBoard.vue` included, through
-`@vitejs/plugin-vue`. Releases are git tags (`v0.1.0`), which an app pins as `github:vikdoro/tadacube-engine#v0.1.0`.
+`@vitejs/plugin-vue`. Releases are git tags (`v0.1.0`), which an app pins as `github:vikdoro/flatcube#v0.1.0`.
+
+## License
+
+MIT
